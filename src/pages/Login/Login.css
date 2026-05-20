@@ -1,5 +1,5 @@
-/* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Import Inter and Roboto fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@600&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,52 +22,59 @@
 
 .login-container {
   width: 100%;
-  max-width: 384px; /* Matches standard w-96 */
+  max-width: 384px;
   display: flex;
   flex-direction: column;
 }
 
 .login-title {
-  font-size: 2.25rem; /* ~36px */
-  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.01em;
   color: #000000;
   text-align: center;
-  margin-bottom: 3.5rem;
-  letter-spacing: -0.025em;
+  margin-bottom: 83px; /* 111px Top offset from container (28px title height + 83px margin) */
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 26px;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 12px;
+  height: 76px;
+  width: 100%;
 }
 
 .input-label {
-  font-size: 0.875rem; /* 14px */
+  font-size: 14px;
   font-weight: 500;
   color: #0f172a;
+  line-height: 16px;
+  height: 16px;
 }
 
 .input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #f8f9fa; /* Very light gray */
-  border: 1px solid #f1f3f5; /* Subtle border */
-  border-radius: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #CED1D8;
+  border-radius: 8px;
   transition: all 0.2s ease;
   width: 100%;
+  height: 48px; /* Remaining space: 76px group height - 16px label - 12px gap */
 }
 
 .input-wrapper:focus-within {
-  border-color: #e2e8f0;
-  box-shadow: 0 0 0 1px #e2e8f0;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
   background-color: #ffffff;
 }
 
@@ -80,7 +87,7 @@
 
 .login-input {
   width: 100%;
-  height: 52px;
+  height: 100%;
   background: transparent;
   border: none;
   outline: none;
@@ -129,16 +136,16 @@
 }
 
 .login-btn {
-  height: 52px;
+  height: 48px;
   width: 100%;
   background-color: #000000;
   color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-top: 28px; /* 16px form gap + 28px margin = 44px gap (matching the distance between input boxes) */
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
