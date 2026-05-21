@@ -108,3 +108,12 @@ Password:
 ```txt
 Anything you type
 ```
+
+---
+
+# Project Notes
+
+Detailed implementation notes, design observations, and frontend traps documented during development:
+
+https://docs.google.com/document/d/14LOAkzXaxNmgGg9pG7XB00ujcRB1_M0SsTvs6iHMBpU/edit?usp=sharing
+
