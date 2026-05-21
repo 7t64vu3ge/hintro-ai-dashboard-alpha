@@ -1,16 +1,110 @@
-# React + Vite
+# Hintro AI Dashboard Alpha
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend mock dashboard project built for the Hintro Frontend Assignment.
 
-Currently, two official plugins are available:
+This project recreates the provided Figma dashboard design using React and the supplied mock APIs. The dashboard supports both empty and populated states based on different users returned from the API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# Project Idea
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project was to build a mock dashboard interface that:
 
-## Expanding the ESLint configuration
+- Follows the provided Figma design
+- Uses live mock API data
+- Handles multiple user states
+- Displays empty and populated dashboard views
+- Maintains reusable styling and theme consistency
+- Includes responsive layouts and transitions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project focuses heavily on frontend implementation, API integration, UI accuracy, and component structuring.
+
+---
+
+# Features
+
+- Dashboard UI based on Figma
+- API-driven data rendering
+- Empty state handling
+- Dynamic call statistics
+- Feedback history page
+- Responsive layouts
+- Reusable CSS structure
+- React Router navigation
+
+---
+
+# Routes
+
+- `/` → Login Page
+- `/dashboard` → Dashboard Page
+- `/feedback-history` → Feedback History Page
+
+---
+
+# Setup Tutorial
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/7t64vu3ge/hintro-ai-dashboard-alpha.git
+```
+
+## 2. Navigate Into the Project
+
+```bash
+cd hintro-ai-dashboard-alpha
+```
+
+## 3. Install Dependencies
+
+```bash
+npm install
+```
+
+## 4. Create Environment File
+
+```bash
+touch .env
+```
+
+## 5. Add API URL
+
+```bash
+echo "VITE_API_URL=https://mock-backend-hintro.vercel.app" > .env
+```
+
+Or manually add this inside `.env`:
+
+```env
+VITE_API_URL=https://mock-backend-hintro.vercel.app
+```
+
+## 6. Start the Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# Mock API Users
+
+The backend supports two user states:
+
+| User | Behaviour |
+|------|------------|
+| `u1` | Empty dashboard states |
+| `u2` | Randomized populated dashboard data |
+
+## Test Login Credentials
+
+| Email | Purpose |
+|------|------|
+| `u1@test.com` | Empty state dashboard |
+| `u2@test.com` | Dashboard with populated/randomized data |
+
+Password:
+```txt
+Anything you type
+```
