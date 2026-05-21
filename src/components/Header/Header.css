@@ -122,3 +122,47 @@
   height: 20px;
   color: #000000;
 }
+
+.mobile-menu-icon {
+  display: none;
+}
+
+@media (max-width: 430px) {
+  .dashboard-header {
+    height: auto;
+    padding: 16px;
+    left: 0;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  .header-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.3px;
+  }
+
+  .watch-tutorial-btn {
+    display: none;
+  }
+
+  .user-avatar-container {
+    gap: 0;
+  }
+
+  .user-avatar-container svg {
+    display: none;
+  }
+
+  .user-avatar {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}

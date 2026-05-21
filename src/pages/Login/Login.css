@@ -1,4 +1,3 @@
-/* Import Inter and Roboto fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@600&display=swap');
 
 * {
@@ -35,7 +34,8 @@
   letter-spacing: -0.01em;
   color: #000000;
   text-align: center;
-  margin-bottom: 83px; /* 111px Top offset from container (28px title height + 83px margin) */
+  margin-bottom: 83px;
+  /* 111px Top offset from container (28px title height + 83px margin) */
 }
 
 .login-form {
@@ -69,7 +69,8 @@
   border-radius: 8px;
   transition: all 0.2s ease;
   width: 100%;
-  height: 48px; /* Remaining space: 76px group height - 16px label - 12px gap */
+  height: 48px;
+  /* Remaining space: 76px group height - 16px label - 12px gap */
 }
 
 .input-wrapper:focus-within {
@@ -145,7 +146,8 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 28px; /* 16px form gap + 28px margin = 44px gap (matching the distance between input boxes) */
+  margin-top: 28px;
+  /* 16px form gap + 28px margin = 44px gap (matching the distance between input boxes) */
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -202,13 +204,91 @@
   color: #e5e7eb;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
   .login-page {
     padding: 1rem;
   }
-  
+
   .mock-users-footer {
     position: static;
     margin-top: 3rem;
+  }
+
+  .login-container {
+    width: 330px;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .login-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .login-form {
+    width: 330px;
+    height: 240px;
+    position: relative;
+    gap: 0;
+  }
+
+  .input-group {
+    width: 328px;
+    height: 72px;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .input-label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+  }
+
+  .input-wrapper {
+    width: 328px;
+    height: 48px;
+  }
+
+  .login-input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+
+  .login-input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+  }
+
+  .login-btn {
+    position: absolute;
+    top: 207px;
+    left: 100px; /* 330/2 - 130/2 = 100 */
+    width: 130px;
+    height: 33px;
+    margin-top: 0;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: 0em;
+  }
+
+  .error-text {
+    position: absolute;
+    bottom: 40px;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
   }
 }

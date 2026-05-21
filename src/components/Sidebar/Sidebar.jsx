@@ -65,7 +65,7 @@ const BOTTOM_ITEMS = [
   { id: "feedback", label: "Feedback", icon: FeedbackIcon },
 ];
 
-function Sidebar() {
+function Sidebar({ isOpen, onClose }) {
   const location = useLocation();
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
@@ -124,27 +124,35 @@ function Sidebar() {
   }, [location.pathname]);
 
   return (
-    <aside className="sidebar">
-      {isFeedbackOpen && <FeedbackPopup onClose={() => setIsFeedbackOpen(false)} />}
-      <div className="sidebar-header">
-        <h1 className="logo-text">Hintro</h1>
-      </div>
-
-      <nav className="sidebar-nav">
-        {NAV_ITEMS.map(renderNavItem)}
-      </nav>
-
-      <div className="sidebar-bottom">
-        <nav className="sidebar-nav-bottom">
-          {BOTTOM_ITEMS.map(renderNavItem)}
-        </nav>
-        <div className="upgrade-btn-container">
-          <button className="upgrade-btn">
-          Upgrade
-        </button>
+    <>
+      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
+      <aside className={`sidebar ${isOpen ? "mobile-open" : ""}`}>
+        {isFeedbackOpen && <FeedbackPopup onClose={() => setIsFeedbackOpen(false)} />}
+        <div className="sidebar-header">
+          <button className="sidebar-close-btn" onClick={onClose} aria-label="Close sidebar">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 13L13 1M1 1L13 13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <h1 className="logo-text">Hintro</h1>
         </div>
-      </div>
-    </aside>
+
+        <nav className="sidebar-nav">
+          {NAV_ITEMS.map(renderNavItem)}
+        </nav>
+
+        <div className="sidebar-bottom">
+          <nav className="sidebar-nav-bottom">
+            {BOTTOM_ITEMS.map(renderNavItem)}
+          </nav>
+          <div className="upgrade-btn-container">
+            <button className="upgrade-btn">
+            Upgrade
+          </button>
+          </div>
+        </div>
+      </aside>
+    </>
   );
 }
 

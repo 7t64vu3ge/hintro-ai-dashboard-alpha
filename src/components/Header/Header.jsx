@@ -5,7 +5,7 @@ import { useUser } from "../../context/UserContext";
 import "./Header.css";
 import "./LogoutPopup.css";
 
-function Header({ user, title }) {
+function Header({ user, title, onMenuClick }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showLogoutPopup, setShowLogoutPopup] = useState(false);
   const dropdownRef = useRef(null);
@@ -35,6 +35,9 @@ function Header({ user, title }) {
   return (
     <header className="dashboard-header">
       <div className="header-left">
+        <svg className="mobile-menu-icon" onClick={onMenuClick} width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 7H19M1 1H19M1 13H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
         <h2 className="header-title">{title || "Dashboard"}</h2>
       </div>
 

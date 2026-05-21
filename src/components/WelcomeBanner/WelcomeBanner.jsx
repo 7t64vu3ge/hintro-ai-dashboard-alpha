@@ -14,7 +14,7 @@ function WelcomeBanner({ userName = "User" }) {
       </div>
 
       <button className="start-call-btn">
-        Start New Call
+        Start Call
       </button>
     </div>
   );

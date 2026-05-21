@@ -99,3 +99,60 @@
 .logout-popup-confirm:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 430px) {
+  .logout-popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .logout-popup {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 16px 16px 0 0;
+    padding: 28px 24px 36px 24px;
+    box-sizing: border-box;
+  }
+
+  .logout-popup-title {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 14px 0;
+  }
+
+  .logout-popup-divider {
+    margin-bottom: 20px;
+  }
+
+  .logout-popup-body {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+  }
+
+  .logout-popup-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .logout-popup-cancel {
+    width: 130px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .logout-popup-confirm {
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+}
