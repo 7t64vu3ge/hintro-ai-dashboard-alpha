@@ -5,7 +5,7 @@ import { useUser } from "../../context/UserContext";
 import "./Header.css";
 import "./LogoutPopup.css";
 
-function Header({ user }) {
+function Header({ user, title }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showLogoutPopup, setShowLogoutPopup] = useState(false);
   const dropdownRef = useRef(null);
@@ -31,7 +31,7 @@ function Header({ user }) {
   return (
     <header className="dashboard-header">
       <div className="header-left">
-        <h2 className="header-title">Dashboard</h2>
+        <h2 className="header-title">{title || "Dashboard"}</h2>
       </div>
 
       <div className="header-right">

@@ -8,16 +8,22 @@ import RecentCalls from "../../components/RecentCalls/RecentCalls";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const { userId } = useUser();
-  const [loading, setLoading] = useState(true);
+  const { 
+    userId,
+    profile, setProfile,
+    dashboardData, setDashboardData,
+    statsData, setStatsData,
+    callHistory, setCallHistory
+  } = useUser();
+  const [loading, setLoading] = useState(!profile);
   
-  const [profile, setProfile] = useState(null);
-  const [dashboardData, setDashboardData] = useState(null);
-  const [statsData, setStatsData] = useState(null);
-  const [callHistory, setCallHistory] = useState([]);
-
   useEffect(() => {
     const loadData = async () => {
+      if (profile && dashboardData && statsData && callHistory) {
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
         const [profileRes, dashboardRes, statsRes, historyRes] = await Promise.allSettled([
@@ -42,7 +48,7 @@ function Dashboard() {
     if (userId) {
       loadData();
     }
-  }, [userId]);
+  }, [userId, profile, dashboardData, statsData, callHistory, setProfile, setDashboardData, setStatsData, setCallHistory]);
 
   const handleStartCall = useCallback(() => {
     console.log("Start new call clicked");
