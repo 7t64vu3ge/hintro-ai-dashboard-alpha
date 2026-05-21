@@ -9,7 +9,7 @@ function Header({ user, title }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showLogoutPopup, setShowLogoutPopup] = useState(false);
   const dropdownRef = useRef(null);
-  const { setUserId } = useUser();
+  const { setUserId, setProfile, setDashboardData, setStatsData, setCallHistory } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,7 +25,11 @@ function Header({ user, title }) {
   const handleLogout = () => {
     localStorage.removeItem("userId");
     setUserId("");
-    navigate("/login");
+    setProfile(null);
+    setDashboardData(null);
+    setStatsData(null);
+    setCallHistory(null);
+    navigate("/");
   };
 
   return (
