@@ -1,0 +1,101 @@
+.logout-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 1000;
+}
+
+.logout-popup {
+  position: fixed;
+  top: 266px;
+  left: 527px;
+  width: 420px;
+  height: 229px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+
+.logout-popup-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.3px;
+}
+
+.logout-popup-divider {
+  width: 100%;
+  height: 1px;
+  background: #E5E7EB;
+  margin-bottom: 24px;
+}
+
+.logout-popup-body {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0 0 auto 0;
+  letter-spacing: 0.3px;
+}
+
+.logout-popup-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.logout-popup-cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 119px;
+  height: 31px;
+  background: #FFFFFF;
+  border: 0.5px solid #000000;
+  border-radius: 3.75px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-popup-cancel:hover {
+  background: #F9FAFB;
+}
+
+.logout-popup-confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 119px;
+  height: 31px;
+  background: #000000;
+  border: none;
+  border-radius: 3.75px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.logout-popup-confirm:hover {
+  opacity: 0.8;
+}

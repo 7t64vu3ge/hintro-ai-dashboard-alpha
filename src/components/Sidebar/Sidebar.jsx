@@ -1,6 +1,7 @@
-import React, { useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
+import FeedbackPopup from "../FeedbackPopup/FeedbackPopup";
 
 const DashboardIcon = ({ color }) => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,23 +62,27 @@ const NAV_ITEMS = [
 
 const BOTTOM_ITEMS = [
   { id: "feedback-history", label: "Feedback History", path: "/feedback-history", icon: FeedbackHistoryIcon },
-  { id: "feedback", label: "Feedback", path: "/feedback", icon: FeedbackIcon },
+  { id: "feedback", label: "Feedback", icon: FeedbackIcon },
 ];
 
 function Sidebar() {
   const location = useLocation();
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   const renderNavItem = useMemo(() => {
     return (item) => {
-      const isActive = location.pathname === item.path;
+      const isActive = item.path ? location.pathname === item.path : false;
       const color = isActive ? "#6686FF" : "#4D4D4D";
 
+      const ItemComponent = item.path ? Link : "button";
+      const itemProps = item.path 
+        ? { to: item.path, key: item.id, className: `nav-item ${isActive ? "active" : ""}` }
+        : { key: item.id, className: `nav-item ${isActive ? "active" : ""}`, onClick: () => {
+            if (item.id === "feedback") setIsFeedbackOpen(true);
+          } };
+
       return (
-        <Link
-          to={item.path}
-          key={item.id}
-          className={`nav-item ${isActive ? "active" : ""}`}
-        >
+        <ItemComponent {...itemProps}>
           <div className="nav-item-content">
             <div className="nav-icon">
               <item.icon color={color} />
@@ -113,13 +118,14 @@ function Sidebar() {
               </div>
             </div>
           )}
-        </Link>
+        </ItemComponent>
       );
     };
   }, [location.pathname]);
 
   return (
     <aside className="sidebar">
+      {isFeedbackOpen && <FeedbackPopup onClose={() => setIsFeedbackOpen(false)} />}
       <div className="sidebar-header">
         <h1 className="logo-text">Hintro</h1>
       </div>

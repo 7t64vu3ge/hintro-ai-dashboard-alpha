@@ -50,6 +50,12 @@
   text-decoration: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  width: 100%;
+  text-align: left;
 }
 
 .nav-item-content {

@@ -1,0 +1,144 @@
+.feedback-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-popup {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 32px;
+  width: 577px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-popup-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.feedback-popup-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.feedback-stars {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.feedback-star {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.feedback-star:hover {
+  transform: scale(1.15);
+}
+
+.feedback-star svg {
+  width: 36px;
+  height: 34px;
+}
+
+.feedback-textarea-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.feedback-textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  resize: vertical;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.feedback-textarea:focus {
+  border-color: #9CA3AF;
+}
+
+.feedback-textarea::placeholder {
+  color: #D1D5DB;
+}
+
+.feedback-popup-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.feedback-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background-color 0.2s ease;
+}
+
+.feedback-back-btn:hover {
+  background: #F9FAFB;
+}
+
+.feedback-submit-btn {
+  padding: 8px 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.feedback-submit-btn:hover {
+  opacity: 0.85;
+}
