@@ -1,0 +1,166 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 264px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.sidebar-header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+  margin: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  gap: 8px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 37px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.nav-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.nav-label {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.3px;
+  color: #4D4D4D;
+}
+
+.nav-info-wrapper {
+  position: relative;
+}
+
+.nav-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.6;
+
+  position: relative;
+}
+
+.nav-tooltip {
+  position: absolute;
+
+  left: calc(100% + 4px);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+
+  z-index: 100;
+}
+
+.nav-info-wrapper:hover .nav-tooltip {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.nav-item:hover {
+  background: rgba(102, 134, 255, 0.12);
+}
+
+.nav-item:hover .nav-label {
+  color: #4D4D4D;
+}
+
+.nav-item.active {
+  background: rgba(102, 134, 255, 0.12);
+}
+
+.nav-item.active .nav-label {
+  color: #6686FF;
+}
+
+.sidebar-bottom {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upgrade-btn {
+  background-color: #8A8A8A;
+  /* Placeholder color for upgrade btn based on image */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.upgrade-btn:hover {
+  background-color: #737373;
+}

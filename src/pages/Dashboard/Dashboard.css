@@ -1,0 +1,27 @@
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 16px;
+  width: 1000px;
+  margin-top: 50px;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6B7280;
+}
