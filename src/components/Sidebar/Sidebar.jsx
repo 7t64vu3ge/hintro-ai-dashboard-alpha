@@ -36,6 +36,21 @@ const DoxyControlsIcon = ({ color }) => (
 
 )
 
+const FeedbackHistoryIcon = ({ color }) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5651 4.63239C4.72649 4.1079 5.21107 3.75 5.75983 3.75H7.5C7.84518 3.75 8.125 3.47018 8.125 3.125C8.125 2.77982 7.84518 2.5 7.5 2.5H5.75983C4.66232 2.5 3.69314 3.21581 3.37038 4.26479L1.36055 10.7967C1.28726 11.0349 1.25 11.2827 1.25 11.5319V15C1.25 16.3807 2.36929 17.5 3.75 17.5H16.25C17.6307 17.5 18.75 16.3807 18.75 15V11.5319C18.75 11.2827 18.7127 11.0349 18.6394 10.7967L16.6296 4.26479C16.3069 3.21581 15.3377 2.5 14.2402 2.5H12.5C12.1548 2.5 11.875 2.77982 11.875 3.125C11.875 3.47018 12.1548 3.75 12.5 3.75H14.2402C14.7889 3.75 15.2735 4.1079 15.4349 4.63239L17.2788 10.625H14.9088C13.9619 10.625 13.0962 11.16 12.6727 12.007L12.4592 12.434C12.2475 12.8575 11.8147 13.125 11.3412 13.125H8.65881C8.18535 13.125 7.75252 12.8575 7.54078 12.434L7.32725 12.007C6.90377 11.16 6.03812 10.625 5.09119 10.625H2.72122L4.5651 4.63239Z" fill="black" fill-opacity="0.7" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1.875C10.3452 1.875 10.625 2.15482 10.625 2.5V7.86612L12.0581 6.43306C12.3021 6.18898 12.6979 6.18898 12.9419 6.43306C13.186 6.67714 13.186 7.07286 12.9419 7.31694L10.4419 9.81694C10.1979 10.061 9.80214 10.061 9.55806 9.81694L7.05806 7.31694C6.81398 7.07286 6.81398 6.67714 7.05806 6.43306C7.30214 6.18898 7.69786 6.18898 7.94194 6.43306L9.375 7.86612V2.5C9.375 2.15482 9.65482 1.875 10 1.875Z" fill="black" fill-opacity="0.7" />
+  </svg>
+)
+
+const FeedbackIcon = ({ color }) => (
+  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5625 1.25C5.69956 1.25 5 1.94956 5 2.8125C5 3.67545 5.69956 4.375 6.5625 4.375H8.125V8.125H1.5625C0.699556 8.125 0 7.42545 0 6.5625V5.9375C0 5.07456 0.699555 4.375 1.5625 4.375H4.22361C3.92446 3.92809 3.75 3.39067 3.75 2.8125C3.75 1.2592 5.0092 0 6.5625 0C7.44602 0 8.23439 0.407397 8.75 1.04458C9.26561 0.407397 10.054 0 10.9375 0C12.4908 0 13.75 1.2592 13.75 2.8125C13.75 3.39067 13.5755 3.92809 13.2764 4.375H16.5625C17.4254 4.375 18.125 5.07455 18.125 5.9375V6.5625C18.125 7.42544 17.4254 8.125 16.5625 8.125H9.375V4.375H10.9375C11.8004 4.375 12.5 3.67545 12.5 2.8125C12.5 1.94956 11.8004 1.25 10.9375 1.25C10.0746 1.25 9.375 1.94956 9.375 2.8125V4.375H8.125V2.8125C8.125 1.94956 7.42545 1.25 6.5625 1.25Z" fill="black" fill-opacity="0.7" />
+    <path d="M8.125 9.375H1.25V15C1.25 16.0355 2.08947 16.875 3.125 16.875H8.125V9.375Z" fill="black" fill-opacity="0.7" />
+    <path d="M9.375 9.375V16.875H15C16.0355 16.875 16.875 16.0355 16.875 15V9.375H9.375Z" fill="black" fill-opacity="0.7" />
+  </svg>
+)
+
 const NAV_ITEMS = [
   { id: "dashboard", label: "Dashboard", path: "/dashboard", icon: DashboardIcon },
   { id: "insights", label: "Call Insights", path: "/insights", icon: CallInsightIcon },
@@ -45,8 +60,8 @@ const NAV_ITEMS = [
 ];
 
 const BOTTOM_ITEMS = [
-  { id: "feedback-history", label: "Feedback History", path: "/feedback-history", icon: DashboardIcon },
-  { id: "feedback", label: "Feedback", path: "/feedback", icon: DashboardIcon },
+  { id: "feedback-history", label: "Feedback History", path: "/feedback-history", icon: FeedbackHistoryIcon },
+  { id: "feedback", label: "Feedback", path: "/feedback", icon: FeedbackIcon },
 ];
 
 function Sidebar() {
@@ -117,9 +132,11 @@ function Sidebar() {
         <nav className="sidebar-nav-bottom">
           {BOTTOM_ITEMS.map(renderNavItem)}
         </nav>
-        <button className="upgrade-btn">
+        <div className="upgrade-btn-container">
+          <button className="upgrade-btn">
           Upgrade
         </button>
+        </div>
       </div>
     </aside>
   );

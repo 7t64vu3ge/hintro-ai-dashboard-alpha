@@ -6,7 +6,7 @@
   gap: 16px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
+  border-radius: 10px;
   width: 240px;
   height: 80px;
   box-sizing: border-box;
@@ -31,8 +31,9 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  color: black;
+  color: rgba(0, 0, 0, 0.8);
   margin: 0;
+  letter-spacing: 0.3px;
 }
 
 .stats-value {
@@ -42,4 +43,5 @@
   font-size: 20px;
   color: #000000;
   margin: 0;
+  letter-spacing: 0.3px;
 }

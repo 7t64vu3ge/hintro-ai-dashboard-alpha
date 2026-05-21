@@ -147,13 +147,24 @@
   gap: 8px;
 }
 
+.upgrade-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 180px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
 .upgrade-btn {
   background-color: #8A8A8A;
-  /* Placeholder color for upgrade btn based on image */
+  width: 180px;
+  height: 33px;
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  padding: 10px;
+
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 14px;

@@ -20,17 +20,18 @@ function Dashboard() {
     const loadData = async () => {
       try {
         setLoading(true);
-        const [profileRes, dashboardRes, statsRes, historyRes] = await Promise.all([
+        const [profileRes, dashboardRes, statsRes, historyRes] = await Promise.allSettled([
           fetchProfile(userId),
           fetchDashboard(userId),
           fetchStats(userId),
           fetchCallHistory(userId, 10)
         ]);
 
-        setProfile(profileRes);
-        setDashboardData(dashboardRes);
-        setStatsData(statsRes);
-        setCallHistory(historyRes?.callSessions || []);
+        if (profileRes.status === "fulfilled")   setProfile(profileRes.value);
+        if (dashboardRes.status === "fulfilled") setDashboardData(dashboardRes.value);
+        if (statsRes.status === "fulfilled")     setStatsData(statsRes.value);
+        if (historyRes.status === "fulfilled")   setCallHistory(historyRes.value?.callSessions || []);
+        else console.warn("Call history could not be loaded:", historyRes.reason);
       } catch (error) {
         console.error("Error loading dashboard data", error);
       } finally {

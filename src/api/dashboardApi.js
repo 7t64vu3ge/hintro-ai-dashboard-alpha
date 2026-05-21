@@ -36,7 +36,7 @@ export const fetchDashboard = async(userId) => {
 export const fetchStats = async(userId) => {
     try {
         const response = await axiosInstance.get(
-            ENDPOINTS.STATS,
+            ENDPOINTS.CALL_STATS,
             getUserHeaders(userId)
         )
 

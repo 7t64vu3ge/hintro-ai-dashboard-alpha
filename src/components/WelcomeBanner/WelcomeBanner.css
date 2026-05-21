@@ -18,7 +18,7 @@
   font-size: 20px;
   color: #000000;
   margin: 0;
-  word-spacing: 0.3;
+  letter-spacing: 0.3;
 }
 
 .welcome-subtitle {
@@ -28,6 +28,7 @@
   font-size: 12px;
   color: rgba(0, 0, 0, 1);
   margin: 0;
+  letter-spacing: 0.3px;
 }
 
 .start-call-btn {
@@ -45,7 +46,7 @@
   color: #FFFFFF;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  word-spacing: 0.3px;
+  letter-spacing: 0.3px;
 }
 
 .start-call-btn:hover {
