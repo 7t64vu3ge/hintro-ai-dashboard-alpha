@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { useUser } from "../../context/UserContext";
 import "./FeedbackPopup.css";
 
 const StarIcon = ({ filled }) => (
@@ -12,6 +13,7 @@ const StarIcon = ({ filled }) => (
 );
 
 function FeedbackPopup({ onClose }) {
+  const { userId } = useUser();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [hoveredStar, setHoveredStar] = useState(0);
@@ -35,11 +37,10 @@ function FeedbackPopup({ onClose }) {
       timestamp: new Date().toISOString(),
     };
 
-    const existingFeedbacks = JSON.parse(
-      localStorage.getItem("feedbacks") || "[]"
-    );
+    const key = `feedbacks_${userId}`;
+    const existingFeedbacks = JSON.parse(localStorage.getItem(key) || "[]");
     existingFeedbacks.push(feedback);
-    localStorage.setItem("feedbacks", JSON.stringify(existingFeedbacks));
+    localStorage.setItem(key, JSON.stringify(existingFeedbacks));
 
     onClose();
   };

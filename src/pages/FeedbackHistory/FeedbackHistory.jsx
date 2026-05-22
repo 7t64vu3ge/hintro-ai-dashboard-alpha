@@ -15,10 +15,10 @@ function formatTime(isoString) {
 }
 
 function FeedbackHistory() {
-  const { profile } = useUser();
+  const { profile, userId } = useUser();
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
-  const feedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
+  const feedbacks = JSON.parse(localStorage.getItem(`feedbacks_${userId}`) || "[]");
 
   return (
     <DashboardLayout user={profile} title="Feedback History">
