@@ -83,6 +83,21 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+.rating-ratio {
+  display: inline;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.rating-stars {
+  display: none;
+}
+
+.feedback-datetime-mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .feedback-history-content {
     padding: 18px 16px 32px;
@@ -167,10 +182,13 @@
     align-items: center;
   }
 
-  .feedback-rating-stars {
+  .rating-ratio {
+    display: none;
+  }
+
+  .rating-stars {
     display: flex;
     align-items: center;
-
     gap: 1px;
   }
 
@@ -215,6 +233,22 @@
     font-size: 11px;
 
     color: rgba(0, 0, 0, 0.4);
+  }
+
+  .feedback-date,
+  .feedback-time {
+    display: none;
+  }
+
+  .feedback-datetime-mobile {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .feedback-dot {
+    color: rgba(0, 0, 0, 0.3);
   }
 
   .feedback-empty-state {
