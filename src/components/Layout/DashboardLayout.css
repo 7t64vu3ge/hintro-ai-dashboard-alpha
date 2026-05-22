@@ -22,13 +22,13 @@
   overflow-y: auto;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .main-content-wrapper {
     margin-left: 0;
-    padding-top: 56px; /* Adjust according to mobile header height */
+    padding-top: 56px;
   }
   
   .main-content {
-    padding: 16px 0; /* Let inner containers manage horizontal padding if they want, or keep it small */
+    padding: 16px 0;
   }
 }

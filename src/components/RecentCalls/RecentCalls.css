@@ -247,7 +247,7 @@
   background: #F3F4F6;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .empty-state {
     width: 100%;
     max-width: 355px;

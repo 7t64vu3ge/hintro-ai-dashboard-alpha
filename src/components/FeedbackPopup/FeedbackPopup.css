@@ -143,7 +143,7 @@
   opacity: 0.85;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .feedback-popup-overlay {
     background: rgba(0, 0, 0, 0.32);
 

@@ -204,7 +204,7 @@
   color: #e5e7eb;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .login-page {
     padding: 1rem;
   }

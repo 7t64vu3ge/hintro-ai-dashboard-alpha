@@ -46,7 +46,7 @@
   letter-spacing: 0.3px;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .stats-card {
     width: calc(50% - 5px);
     height: 70px;
