@@ -85,9 +85,10 @@ function FeedbackPopup({ onClose }) {
 
         <div className="feedback-popup-actions">
           <button className="feedback-back-btn" onClick={onClose}>
-            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14.375 6.75H0.75M6.75 0.75L0.75 6.75L6.75 12.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <svg width="16" height="16" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.63994 3.58725H0.398682M3.58749 0.398438L0.398682 3.58725L3.58749 6.77606" stroke="black" stroke-width="0.797203" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
+
 
             Back
           </button>

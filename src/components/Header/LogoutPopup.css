@@ -102,57 +102,92 @@
 
 @media (max-width: 430px) {
   .logout-popup-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
   }
 
   .logout-popup {
-    position: fixed;
+    position: relative;
     top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+
     width: 100%;
+    max-width: 330px;
     height: auto;
-    border-radius: 16px 16px 0 0;
-    padding: 28px 24px 36px 24px;
+
+    background: #FFFFFF;
+    border-radius: 4px;
+
+    padding: 24px 20px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
   }
 
   .logout-popup-title {
-    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     font-weight: 500;
+    line-height: 1.3;
     margin: 0 0 14px 0;
+    color: #000000;
   }
 
   .logout-popup-divider {
+    width: 100%;
+    height: 1px;
+    background: #E5E7EB;
     margin-bottom: 20px;
   }
 
   .logout-popup-body {
-    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
     line-height: 1.5;
-    margin: 0 0 24px 0;
+    color: #000000;
+    margin: 0 0 28px 0;
   }
 
   .logout-popup-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 95px;
     margin-top: 0;
   }
 
+  .logout-popup-cancel,
+  .logout-popup-confirm {
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    border-radius: 4px;
+  }
+
   .logout-popup-cancel {
-    width: 130px;
-    height: 40px;
-    font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    color: #000000;
   }
 
   .logout-popup-confirm {
-    width: 180px;
-    height: 40px;
-    font-size: 15px;
-    border-radius: 6px;
+    background: #000000;
+    border: none;
+    color: #FFFFFF;
   }
 }
