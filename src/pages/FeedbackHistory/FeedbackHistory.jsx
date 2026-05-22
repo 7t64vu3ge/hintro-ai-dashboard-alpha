@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import DashboardLayout from "../../components/Layout/DashboardLayout";
 import FeedbackPopup from "../../components/FeedbackPopup/FeedbackPopup";
 import { useUser } from "../../context/UserContext";
@@ -18,11 +18,18 @@ function FeedbackHistory() {
   const { profile, userId } = useUser();
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
-  const feedbacks = JSON.parse(localStorage.getItem(`feedbacks_${userId}`) || "[]");
+  const [feedbacks, setFeedbacks] = useState(() =>
+    JSON.parse(localStorage.getItem(`feedbacks_${userId}`) || "[]")
+  );
+
+  const handleFeedbackClose = useCallback(() => {
+    setFeedbacks(JSON.parse(localStorage.getItem(`feedbacks_${userId}`) || "[]"));
+    setIsFeedbackOpen(false);
+  }, [userId]);
 
   return (
     <DashboardLayout user={profile} title="Feedback History">
-      {isFeedbackOpen && <FeedbackPopup onClose={() => setIsFeedbackOpen(false)} />}
+      {isFeedbackOpen && <FeedbackPopup onClose={handleFeedbackClose} />}
       <div className="feedback-history-content">
         <p className="feedback-history-subtitle">View and manage all your submitted feedback</p>
         <div className="feedback-history-container">
