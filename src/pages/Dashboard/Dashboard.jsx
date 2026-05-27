@@ -7,6 +7,15 @@ import StatsCard from "../../components/StatsCard/StatsCard";
 import RecentCalls from "../../components/RecentCalls/RecentCalls";
 import "./Dashboard.css";
 
+function getRelativeTime(isoString) {
+  const diff = new Date().getTime() - new Date(isoString).getTime();
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor(diff / 3600000);
+  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
+  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+  return "Just now";
+}
+
 function Dashboard() {
   const { 
     userId,
@@ -76,13 +85,8 @@ function Dashboard() {
     }
 
     let formattedLastSession = "-";
-    if (lastSession) {
-      const diff = Date.now() - new Date(lastSession).getTime();
-      const days = Math.floor(diff / 86400000);
-      const hours = Math.floor(diff / 3600000);
-      if (days > 0) formattedLastSession = `${days} day${days > 1 ? "s" : ""} ago`;
-      else if (hours > 0) formattedLastSession = `${hours} hour${hours > 1 ? "s" : ""} ago`;
-      else formattedLastSession = "Just now";
+    if (lastSession && lastSession.length > 0) {
+      formattedLastSession = getRelativeTime(lastSession[0]);
     }
 
     return [
