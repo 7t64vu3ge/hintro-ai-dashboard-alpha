@@ -76,8 +76,13 @@ function Dashboard() {
     }
 
     let formattedLastSession = "-";
-    if (lastSession && lastSession.length > 0) {
-      formattedLastSession = "2 days ago";
+    if (lastSession) {
+      const diff = Date.now() - new Date(lastSession).getTime();
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor(diff / 3600000);
+      if (days > 0) formattedLastSession = `${days} day${days > 1 ? "s" : ""} ago`;
+      else if (hours > 0) formattedLastSession = `${hours} hour${hours > 1 ? "s" : ""} ago`;
+      else formattedLastSession = "Just now";
     }
 
     return [
